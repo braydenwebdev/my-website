@@ -1,0 +1,33 @@
+/* Error Page Layout */
+.error-wrapper {
+  text-align: center;
+  padding: 4rem 1rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  text-shadow: 0 0 25px rgba(251,191,36,0.35);
+  margin-bottom: 1rem;
+}
+
+.error-box {
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-subtle);
+  backdrop-filter: blur(12px);
+}
+
+.error-box p {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.error-box h2 {
+  margin-bottom: 0.75rem;
+}

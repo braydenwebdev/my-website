@@ -1,0 +1,6 @@
+# Force this folder to use custom errors
+ErrorDocument 403 /uiux-adv/digital-arts-showcase/403.html
+ErrorDocument 404 /uiux-adv/digital-arts-showcase/404.html
+
+# Prevent directory listing (causes 403)
+Options -Indexes

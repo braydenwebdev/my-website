@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Digital Arts Showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact page for the Digital Arts Showcase inspired by NWTC UI/UX & Design.">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script>
+
+  <!-- Site JS -->
+  <script defer src="/uiux-adv/digital-arts-showcase/js/script.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="brand">
+      <a data-fancybox="logo" href="/uiux-adv/digital-arts-showcase/images/nwtc-logo-big.webp">
+        <img src="/uiux-adv/digital-arts-showcase/images/nwtc-logo.webp" alt="NWTC logo" class="brand-logo">
+      </a>
+
+      <div class="brand-text">
+        <p class="brand-kicker">Digital Arts Showcase</p>
+        <h1 class="brand-title">Brayden Urmanski</h1>
+        <p class="brand-subtitle">UI/UX, Web</p>
+      </div>
+    </div>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="primary-nav">
+      <span class="nav-toggle-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <rect x="3" y="5" width="18" height="2" rx="1"></rect>
+          <rect x="3" y="11" width="18" height="2" rx="1"></rect>
+          <rect x="3" y="17" width="18" height="2" rx="1"></rect>
+        </svg>
+      </span>
+    </button>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul id="primary-nav" class="nav-list" hidden>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../programs/index.html">Programs</a></li>
+        <li><a href="index.html" aria-current="page">Contact</a></li>
+        <li><a href="../archive/index.html">Archive</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main" class="layout">
+
+    <section class="hero hero--small">
+      <div class="hero-content">
+        <h2>Contact & Directions</h2>
+        <p>Find Enpower Field at Mile High or send a message using the form below.</p>
+      </div>
+    </section>
+
+    <!-- DIRECTIONS -->
+    <section class="contact-section">
+      <h2>Directions</h2>
+
+      <form action="https://maps.google.com/maps" class="contact-form">
+        <label for="saddr">Enter Your Address or Zip Code</label>
+        <input id="saddr" name="saddr" required placeholder="Enter your address or zip code">
+        <input type="hidden" name="daddr" value="2740 West Mason Street, Green Bay, WI">
+        <button type="submit" class="btn">Get Directions</button>
+      </form>
+
+      <div id="map" class="map-container"></div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+
+      <form method="post" class="contact-form">
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label for="name-first">First Name</label>
+            <input id="name-first" name="name-first" required placeholder="Enter your first name" autocomplete="on">
+            <span class="valid-msg" aria-hidden="true">Looks Good!</span>
+          </div>
+
+          <div class="form-field">
+            <label for="name-last">Last Name</label>
+            <input id="name-last" name="name-last" required placeholder="Enter your last name" autocomplete="on">
+            <span class="valid-msg" aria-hidden="true">Excellent!</span>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="Enter your email address" autocomplete="on">
+            <span class="valid-msg" aria-hidden="true">Email Is Valid!</span>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+            <span class="valid-msg" aria-hidden="true">Message Is Outstanding!</span>
+          </div>
+
+          <div class="form-field form-field--full">
+            <button type="submit" class="btn">Contact Us</button>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+  
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Digital Arts Showcase By Brayden Urmanski</p>
+    <p>Built as a UI/UX advanced project focusing on responsive design and accessibility.</p>
+    <a href="javascript:void(location='https://jigsaw.w3.org/css-validator/validator?uri='+escape(location))">CSS</a>
+    <a href="javascript:void(location='https://validator.w3.org/nu/?doc='+escape(location))">HTML</a>
+    <a href="javascript:void(window.open('https://wave.webaim.org/report?url='+escape(window.location)))">WAVE</a>
+  </footer>
+
+</body>
+</html>

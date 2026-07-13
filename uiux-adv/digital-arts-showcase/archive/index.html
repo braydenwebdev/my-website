@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Archive | Digital Arts Showcase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/uiux-adv/digital-arts-showcase/css/style.css">
+<!-- Load Fancybox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css">
+
+<!-- Load Fancybox JS -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script>
+
+<!-- Load Site JS -->
+<script defer src="/uiux-adv/digital-arts-showcase/js/script.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <a data-fancybox="logo" 
+      href="/uiux-adv/digital-arts-showcase/images/nwtc-logo-big.webp">
+      <img src="/uiux-adv/digital-arts-showcase/images/nwtc-logo.webp" 
+       alt="NWTC logo" 
+       class="brand-logo">
+      </a>
+      <div class="brand-text">
+        <p class="brand-kicker">Digital Arts Showcase</p>
+        <h1 class="brand-title">Archive</h1>
+        <p class="brand-subtitle">Past Events</p>
+      </div>
+    </div>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="5" width="18" height="2" rx="1"></rect>
+          <rect x="3" y="11" width="18" height="2" rx="1"></rect>
+          <rect x="3" y="17" width="18" height="2" rx="1"></rect>
+        </svg>
+      </span>
+    </button>
+
+    <nav class="site-nav">
+      <ul id="primary-nav" class="nav-list" hidden>
+        <li><a href="/uiux-adv/digital-arts-showcase/index.html">Home</a></li>
+        <li><a href="/uiux-adv/digital-arts-showcase/programs/index.html">Programs</a></li>
+        <li><a href="/uiux-adv/digital-arts-showcase/contact/index.html">Contact</a></li>
+        <li><a href="/uiux-adv/digital-arts-showcase/archive/index.html" aria-current="page">Archive</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="layout">
+
+    <section class="cards" aria-labelledby="archive-heading">
+      <header class="section-header">
+        <h2 id="archive-heading">Past Digital Arts Showcase Events</h2>
+        <p>Explore highlights from previous years of student creativity and design excellence.</p>
+      </header>
+
+      <div class="cards-grid">
+
+        <!-- EVENT 2025 -->
+        <article class="card">
+          <h3>Digital Arts Showcase 2025</h3>
+          <p><strong>Date:</strong> Spring, 2025</p>
+          <p>
+           
+          </p>
+
+          <!-- Fancybox gallery -->
+          <div class="archive-gallery">
+            <a data-fancybox="2025" href="/uiux-adv/digital-arts-showcase/images/2025-big.webp">
+              <img src="/uiux-adv/digital-arts-showcase/images/2025.webp" alt="Showcase 2025 preview" class="archive-thumb">
+            </a>
+          </div>
+        </article>
+
+        <!-- EVENT 2024 -->
+        <article class="card">
+          <h3>Digital Arts Showcase 2024</h3>
+          <p><strong>Date:</strong> Spring, 2024</p>
+          <p>
+            
+          </p>
+
+          <div class="archive-gallery">
+            <a data-fancybox="2024" href="/uiux-adv/digital-arts-showcase/images/2024-big.webp">
+              <img src="/uiux-adv/digital-arts-showcase/images/2024.webp" alt="Showcase 2024 preview" class="archive-thumb">
+            </a>
+          </div>
+        </article>
+
+        <!-- EVENT 2023 -->
+        <article class="card">
+          <h3>Digital Arts Showcase 2023</h3>
+          <p><strong>Date:</strong> Spring, 2023</p>
+          <p>
+          
+          </p>
+
+          <div class="archive-gallery">
+            <a data-fancybox="2023" href="/uiux-adv/digital-arts-showcase/images/2023-big.webp">
+              <img src="/uiux-adv/digital-arts-showcase/images/2023.webp" alt="Showcase 2023 preview" class="archive-thumb">
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Digital Arts Showcase</p>
+    <p>UI/UX Advanced Project</p>
+    <a href="javascript:void(location='https://jigsaw.w3.org/css-validator/validator?uri='+escape(location))">CSS</a>
+     <a href="javascript:void(location='https://validator.w3.org/nu/?doc='+escape(location))">HTML</a>
+     <a href="javascript:void(window.open('https://wave.webaim.org/report?url='+escape(window.location)))">WAVE</a>
+  </footer>
+
+</body>
+</html>

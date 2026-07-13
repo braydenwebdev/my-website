@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Arts Showcase | NWTC UI/UX & Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore Digital Arts, Design & Graphic Technology, Web Design, and UI/UX learning opportunities inspired by NWTC.">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css">
+
+  <!-- Fancybox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script>
+
+  <!-- Site JS -->
+  <script defer src="/uiux-adv/digital-arts-showcase/js/script.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" data-aos="fade-down">
+    <div class="brand">
+      <a data-fancybox="logo" href="/uiux-adv/digital-arts-showcase/images/nwtc-logo-big.webp">
+        <img src="/uiux-adv/digital-arts-showcase/images/nwtc-logo.webp" alt="NWTC logo" class="brand-logo">
+      </a>
+      <div class="brand-text">
+        <p class="brand-kicker">Digital Arts Showcase</p>
+        <h1 class="brand-title">Brayden Urmanski</h1>
+        <p class="brand-subtitle">UI/UX, Web</p>
+      </div>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+      <span class="nav-toggle-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <rect x="3" y="5" width="18" height="2" rx="1"></rect>
+          <rect x="3" y="11" width="18" height="2" rx="1"></rect>
+          <rect x="3" y="17" width="18" height="2" rx="1"></rect>
+        </svg>
+      </span>
+    </button>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul id="primary-nav" class="nav-list" hidden>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="programs/index.html">Programs</a></li>
+        <li><a href="contact/index.html">Contact</a></li>
+        <li><a href="archive/index.html">Archive</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="layout">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content" data-aos="fade-up">
+        <h2 id="hero-heading">Create experiences people remember.</h2>
+        <p>
+          Digital design today is more than making things look good—it’s about crafting interfaces and stories
+          that feel intuitive, accessible, and meaningful. This showcase highlights work inspired by
+          Digital Arts and web-focused learning at NWTC in Green Bay.
+        </p>
+        <p>
+          Whether you’re drawn to motion, typography, photography, or interaction design, you can shape your own
+          creative direction and build a portfolio that opens doors to agencies, studios, and freelance work.
+        </p>
+        <a class="hero-cta" href="#programs" data-aos="zoom-in" data-aos-delay="200">Explore featured programs</a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true" data-aos="fade-left">
+        <div class="hero-orbit hero-orbit--primary"></div>
+        <div class="hero-orbit hero-orbit--secondary"></div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="cards" aria-labelledby="programs-heading">
+      <header class="section-header" data-aos="fade-up">
+        <h2 id="programs-heading">Digital arts & experience design paths</h2>
+        <p>
+          These highlights are based on real NWTC offerings in Digital Arts, Design & Graphic Technology,
+          Web Design, and UI/UX-focused learning.
+        </p>
+      </header>
+
+      <div class="cards-grid">
+        <article class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Digital Arts</h3>
+          <p>
+            Build a flexible creative career foundation. Explore digital media labs, audio and video production
+            studios, and design tools while you experiment with illustration, motion, and storytelling.
+          </p>
+          <ul class="card-list">
+            <li>Hands-on work in professional-grade labs</li>
+            <li>Opportunities to explore photography, video, and design</li>
+            <li>Pathways into freelance or in-house creative roles</li>
+          </ul>
+          <p class="card-tagline">Perfect if you want to try many creative tools before specializing.</p>
+        </article>
+
+        <article class="card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Design and Graphic Technology</h3>
+          <p>
+            Combine art and technology to solve real communication problems. Learn layout, branding, and visual
+            systems used in advertising, digital printing, and public relations.
+          </p>
+          <ul class="card-list">
+            <li>Focus on typography, composition, and brand identity</li>
+            <li>Projects that mirror agency-style client work</li>
+            <li>Skills that transfer to both print and digital media</li>
+          </ul>
+          <p class="card-tagline">Ideal for future graphic designers and visual storytellers.</p>
+        </article>
+
+        <article class="card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Web Design Certificate</h3>
+          <p>
+            Learn front-end web design with HTML and CSS while thinking like a UX designer. Build interfaces that
+            look sharp on any device and support a smooth user journey.
+          </p>
+          <ul class="card-list">
+            <li>Mobile-first layouts with responsive grids</li>
+            <li>UI patterns that support clear navigation</li>
+            <li>Credits that can apply toward a Web Development degree</li>
+          </ul>
+          <p class="card-tagline">A strong option if you enjoy both code and design.</p>
+        </article>
+
+        <article class="card" data-aos="fade-up" data-aos-delay="400">
+          <h3>UI/UX Design Foundations</h3>
+          <p>
+            Explore the full UI/UX process—from research and accessibility to prototyping and testing. Learn how
+            to evaluate interfaces, design flows, and present your design decisions clearly.
+          </p>
+          <ul class="card-list">
+            <li>Competitive research and user journey mapping</li>
+            <li>Accessibility-focused design decisions</li>
+            <li>Prototypes and summary reports for your portfolio</li>
+          </ul>
+          <p class="card-tagline">Great for anyone who loves structure, systems, and user empathy.</p>
+        </article>
+      </div>
+    </section>
+    
+    <!-- CONTACT -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading" data-aos="fade-up">
+      <h2 id="contact-heading">Stay curious. Stay connected.</h2>
+      <p>This page is a digital arts showcase Contact</p>
+      <ul class="contact-list">
+        <li><strong>Future</strong> Future Contact</li>
+        <li><strong>Future:</strong> Future Contact</li>
+        <li><strong>Future:</strong> Future Contact</li>
+      </ul>
+    </section>
+
+    <!-- ARCHIVE -->
+    <section id="archive" class="archive" aria-labelledby="archive-heading" data-aos="fade-up">
+      <h2 id="archive-heading">Project archive concept</h2>
+      <p>Future pages</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" data-aos="fade-up">
+    <p>&copy; <span id="year"></span> Digital Arts Showcase By Brayden Urmanski</p>
+    <p>Built as a UI/UX advanced project focusing on responsive design and accessibility.</p>
+    <a href="javascript:void(location='https://jigsaw.w3.org/css-validator/validator?uri='+escape(location))">CSS</a>
+    <a href="javascript:void(location='https://validator.w3.org/nu/?doc='+escape(location))">HTML</a>
+    <a href="javascript:void(window.open('https://wave.webaim.org/report?url='+escape(window.location)))">WAVE</a>
+  </footer>
+
+  <!-- AOS JS + INIT -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out',
+      once: true,
+      offset: 120
+    });
+  </script>
+
+</body>
+</html>
