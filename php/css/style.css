@@ -1,0 +1,631 @@
+@charset "UTF-8";
+
+@import url("assets/vendors/prism.css");
+
+.wrapper pre[class*="language-"]::after,
+.wrapper pre[class*="language-"]::before {
+    content: none;
+}
+
+pre[class*="language-"] {
+    max-height: 400px;
+}
+
+pre > code {
+    font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+}
+
+.wrapper main pre[class*="language-"] {
+    white-space: normal;
+}
+
+.wrapper main pre[class*="language-"] > code {
+    white-space: pre;
+    width: 100%;
+}
+
+main .copy-code {
+    position: absolute;
+    z-index: 2;
+    inset: auto 0 auto auto;
+}
+
+.copy-code:not(main .copy-code) {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 20px;
+    transform: translate(-60px, 0);
+}
+
+body:has(> br:first-of-type + b) {
+    font-family: monospace;
+    font-size: 1.2em;
+    line-height: 1.8;
+    padding: calc(var(--grid-gap) * 2);
+    color: white;
+    background: black;
+}
+
+body:has(br:first-of-type) > b {
+    display: block;
+    color: red;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+::selection {
+    background: var(--color-header-bg);
+}
+
+:root {
+    --color-body-bg: hsl(230deg 20% 30%);
+    --color-wrapper-bg: hsl(230deg 10% 100%);
+    --color-header-bg: hsl(230deg 30% 80%);
+    --color-nav-bg: hsl(231deg 29% 64%);
+    --grid-gap: 1rem;
+    --color-text: hsl(230deg 20% 20%);
+    --error-color: hsl(16deg 92% 74% / 70%);
+    --color-highlight: hsl(54deg 100% 90%);
+    --color-info: hsl(120deg 73% 75% / 60%);
+    --color-zebra: hsl(226deg 17% 36% / 20%);
+}
+
+body {
+    background-color: var(--color-body-bg);
+    margin: 0;
+    min-height: 100dvh;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.wrapper {
+    background: var(--color-wrapper-bg);
+    display: grid;
+    grid-template-columns: minmax(0, 1080px);
+    grid-template-rows: 1fr auto;
+    min-height: 100dvh;
+    justify-content: center;
+    gap: var(--grid-gap);
+    padding: 64px var(--grid-gap) 0;
+    font-family: system-ui, sans-serif;
+    color: var(--color-text);
+}
+
+header {
+    position: fixed;
+    z-index: 9999;
+    inset: 0 0 auto;
+    display: flex;
+    padding-left: 48px;
+    justify-content: center;
+    background: var(--color-header-bg);
+    box-shadow: 0 4px 12px var(--color-text);
+}
+
+a {
+    color: var(--color-text);
+}
+
+header a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+form * {
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+header h1 {
+    margin: 0 0 0 6px;
+    line-height: 48px;
+    font-size: clamp(1rem, 3.2vw, 2rem);
+}
+
+h2 span {
+    
+    border-bottom: 1px solid var(--color-body-bg);
+}
+
+header h1 span {
+    display: none;
+}
+:is(h1 > span, h2 > span) {
+    word-break: break-all;
+    display: block;
+    color: var(--color-body-bg);
+    text-transform: uppercase;
+    font-size: 0.6em;
+    font-style: normal;
+    letter-spacing: 0.2em;
+}
+
+header svg {
+    width: 64px;
+    aspect-ratio: 16/9;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 6px;
+}
+
+/* START - .nav-main */
+.nav-main {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 9999;
+    line-height: 0;
+    background: var(--color-header-bg);
+}
+
+.nav-main-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 0;
+}
+
+/* SET SVG TRANSFORMS - based on individual elements not SVG box */
+.nav-main-menu-toggle svg * {
+    transform-box: fill-box;
+}
+
+/* HAMBURGER MENU ICON */
+.nav-main-menu-toggle rect:nth-child(1) {
+    transition: all 2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transform-origin: center;
+}
+
+.nav-main-menu-toggle rect:nth-child(2) {
+    transition: all 2.25s linear;
+    transform-origin: center;
+}
+
+.nav-main-menu-toggle rect:nth-child(3) {
+    transition: all 2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    transform-origin: center;
+}
+
+/* JAVASCRIPT WILL ADD - aria-expanded="true" - to .nav-main-menu-toggle */
+.nav-main-menu-toggle[aria-expanded="true"] rect:nth-child(1) {
+    transform: translate(0, 10px) rotate(1.125turn);
+}
+
+.nav-main-menu-toggle[aria-expanded="true"] rect:nth-child(2) {
+    transform: scale(0);
+}
+
+.nav-main-menu-toggle[aria-expanded="true"] rect:nth-child(3) {
+    transform: translate(0, -10px) rotate(-1.125turn);
+}
+
+/* END - .nav-main-menu-toggle */
+
+#nav-main-menu {
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+    position: absolute;
+    width: 80vw;
+    height: 100dvh;
+    background: var(--color-header-bg);
+    margin: 0;
+    padding: var(--grid-gap);
+    list-style: none;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    gap: var(--grid-gap);
+    overflow-y: scroll;
+}
+
+#nav-main-menu:not([hidden]) {
+    visibility: visible;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+#nav-main-menu li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    line-height: 3;
+    padding: 0 calc(var(--grid-gap) * 0.5);
+    transition: all 0.25s ease-in-out;
+    border: 1px solid var(--color-text);
+    border-radius: 4px;
+}
+
+#nav-main-menu li a:hover,
+#nav-main-menu li a:focus {
+    background: whitesmoke;
+}
+
+/* END - .nav-main */
+
+main {
+    position: relative;
+}
+
+main > h2 {
+    clear: both;
+}
+
+img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+img[src*="thumbs"],
+img[src*="03-thumbnail-upload/images"] {
+    float: right;
+    margin-left: 6px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: none;
+}
+
+figure {
+    margin: 0;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    text-align: right;
+    background: var(--color-header-bg);
+    padding: calc(var(--grid-gap) / 2);
+}
+
+/**
+ * Forms
+ */
+
+form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+form legend {
+    width: 100%;
+    margin-bottom: var(--grid-gap);
+    font-weight: bold;
+    line-height: 2;
+    border-bottom: 1px solid var(--color-text);
+}
+
+form ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+form li {
+    margin-bottom: var(--grid-gap);
+    padding: var(--grid-gap);
+}
+
+form input:not([type="submit"], [type="reset"], [type="button"], [type="radio"], [type="checkbox"]),
+form textarea,
+form select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-text);
+    border-radius: 4px;
+}
+
+.error {
+    border: 1px solid var(--color-body-bg);
+    border-radius: 4px;
+    background: var(--error-color);
+    padding: var(--grid-gap);
+}
+
+.error strong,
+p.error,
+h2.error {
+    background-image: url("assets/images/icons/alert.svg");
+    background-repeat: no-repeat;
+    background-position: 0.25em center;
+    background-size: 1.25em;
+    padding-left: 2em;
+    line-height: 2;
+    display: block;
+    font-size: 1rem;
+}
+
+form label {
+    display: block;
+}
+
+form:has(input[name="logout"]) {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.info {
+    background-image: url("assets/images/icons/info.svg");
+    background-repeat: no-repeat;
+    background-position: 0.25em center;
+    background-size: 1.25em;
+    padding-left: 2em;
+    line-height: 2;
+    display: block;
+    font-size: 1rem;
+    background-color: var(--color-info);
+    border: 1px solid var(--color-body-bg);
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid var(--color-text);
+    line-height: 2;
+}
+
+tr:nth-child(odd):not(:first-child) {
+    background: var(--color-zebra);
+}
+
+table tr:hover:not(:first-child) {
+    background: var(--color-highlight);
+}
+
+main div:has([aria-label="Map"]) {
+    min-height: 400px;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside nav li {
+    margin: 6px 0;
+}
+
+aside a {
+    display: block;
+    text-decoration: none;
+    line-height: 2;
+    text-indent: 4px;
+    transition: all 0.1s ease-in;
+    border-left: 1px solid #222530;
+}
+
+aside nav a:hover {
+    background: #8991be;
+}
+
+aside a:hover {
+    text-indent: 14px;
+    border-left: 6px solid #222530;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--grid-gap) * 0.5);
+    background: var(--color-header-bg);
+    padding: var(--grid-gap);
+    width: calc(100% + (var(--grid-gap) * 2));
+    transform: translate(calc(-1 * var(--grid-gap)), 0);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer [href="#top"] {
+    width: 2em;
+    background: url("assets/images/icons/arrow-up.svg") no-repeat center / 1.5em;
+}
+
+footer [href="#info"],
+footer [href*="css"] {
+    margin-left: auto;
+}
+
+/**
+ * Panels: Info and Code
+ */
+.panel {
+    position: fixed;
+    left: 4%;
+    right: 4%;
+    padding: 20px;
+    background-color: hsla(0, 0%, 100%, 0.95);
+    font-family: monospace;
+    overflow: scroll;
+    z-index: 99999;
+    transition: all 0.25s ease-out;
+}
+
+.panel-top {
+    top: 0;
+    min-height: 200px;
+    height: 90vh;
+    max-height: 400px;
+    transform: translateY(calc(-100% - 32px));
+    border-top: none;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 4px 8px black;
+}
+
+.panel-bottom {
+    bottom: 0;
+    height: 60vh;
+    transform: translateY(calc(100% + 32px));
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom: none;
+    box-shadow: 0 4px 8px black;
+}
+
+.panel.slide-in {
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0, 01.2, 1, -0.8);
+}
+
+.panel > .panel-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-200%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(-200%);
+    }
+}
+
+div:has(#xhr) {
+    overflow: hidden;
+}
+
+#xhr {
+    position: relative;
+}
+
+#xhr.slide-in {
+    animation: slide-in 0.5s ease-in forwards;
+}
+
+#xhr.slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+}
+
+@media screen and (width >= 768px) {
+    .wrapper {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto auto 1fr auto;
+        max-width: 1080px;
+        margin: auto;
+        padding-top: 0;
+    }
+
+    header,
+    nav,
+    footer {
+        grid-column: 1 / -1;
+    }
+
+    main {
+        grid-column: 1 / span 8;
+    }
+
+    aside {
+        grid-column: 9 / span 4;
+    }
+
+    header {
+        position: relative;
+        z-index: 9999;
+        inset: auto;
+        justify-content: flex-start;
+        box-shadow: none;
+        gap: calc(var(--grid-gap) * 0.5);
+        background: var(--color-header-bg);
+        padding: var(--grid-gap);
+        width: calc(100% + (var(--grid-gap) * 2));
+        transform: translate(calc(-1 * var(--grid-gap)), 0);
+    }
+
+    header a {
+        align-self: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+        line-height: 1em;
+    }
+
+    header h1 span {
+        display: block;
+        line-height: 1;
+        text-indent: 0;
+    }
+
+    header svg {
+        order: -1;
+        width: clamp(64px, 22vw, 256px);
+        aspect-ratio: 16/9;
+        align-self: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .nav-main {
+        position: static;
+        inset: auto;
+    }
+
+    .nav-main-menu-toggle {
+        display: none;
+    }
+
+    #nav-main-menu {
+        transform: translateX(0);
+        position: static;
+        height: auto;
+        visibility: visible;
+        flex-direction: row;
+        padding: var(--grid-gap);
+        padding-top: 0;
+        margin-top: calc(var(--grid-gap) * -1);
+        width: calc(100% + (var(--grid-gap) * 2));
+        transform: translate(calc(-1 * var(--grid-gap)), 0);
+    }
+
+    #nav-main-menu li:has(form) {
+        margin-left: auto;
+    }
+
+    #nav-main-menu input[name="pattern"] {
+        margin-left: auto;
+        line-height: 2;
+    }
+}
+form #allowUpload, 
+form .optional {
+    display:none;
+}

@@ -1,0 +1,7 @@
+AuthName "No Soup For You!"
+
+AuthType Basic
+
+AuthUserFile /var/www/vhosts/burmanski.bitweb1.nwtc.edu/httpdocs/php/includes/.htpasswd
+
+Require valid-user
