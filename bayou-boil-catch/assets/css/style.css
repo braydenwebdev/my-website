@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #F5F5F5;
+    color: #1E1E1E;
+}
+
+h1, h2, h3 {
+    font-family: "Playfair Display", serif;
+}
+
+.navbar {
+    background: #0A1A2F;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hero {
+    background: url('../images/hero-boil.jpg') center/cover no-repeat;
+    padding: 6rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+}
+
+.btn-primary {
+    background: #D64545;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.section {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.featured-grid,
+.menu-grid,
+.order-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card,
+.menu-item,
+.order-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card img,
+.menu-item img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.price {
+    color: #D64545;
+    font-weight: bold;
+}
+
+.contact-section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+.auth-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+}
+
+.auth-section {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.error {
+    color: #D64545;
+}
+
+.success {
+    color: #6A7F4F;
+}
+
+.cart-section {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background: #0A1A2F;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+}
